@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<ruleset name="FraniCore_CodeSniffer">
+  <description>FraniCore Code Sniffer</description>
+
+  <file>src</file>
+  <file>test</file>
+
+  <arg name="report" value="summary" />
+  <arg name="colors" />
+  <arg value="sp" />
+
+  <rule ref="PEAR" />
+
+  <rule ref="PEAR.WhiteSpace.ScopeIndent">
+    <properties>
+      <property name="indent" value="2" />
+    </properties>
+  </rule>
+
+  <rule ref="Generic.WhiteSpace.ScopeIndent">
+    <properties>
+      <property name="indent" value="2" />
+    </properties>
+  </rule>
+
+  <rule ref="PSR2">
+    <exclude name="PSR2.Methods.MethodDeclaration.Underscore" />
+    <exclude name="PSR2.Classes.PropertyDeclaration.Underscore" />
+  </rule>
+
+  <rule ref="Generic.Files.LineLength">
+    <properties>
+      <property name="lineLimit" value="300" />
+      <property name="absoluteLineLimit" value="300" />
+      <property name="ignoreComments" value="true" />
+    </properties>
+  </rule>
+</ruleset>

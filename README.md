@@ -1,6 +1,6 @@
 # <img src="res/platinum.png" alt="" height="80" /> PSN Trophies (PHP API)
 
-![version 0.1.0](https://img.shields.io/badge/version-0.1.0-blue.svg)
+![version 0.1.1](https://img.shields.io/badge/version-0.1.1-blue.svg)
 [![Build Status](https://travis-ci.org/nhuhoai/psn-trophies.svg?branch=master)](https://travis-ci.org/nhuhoai/psn-trophies)
 
 ## Description
@@ -9,15 +9,12 @@ This is an unofficial API to get data from PlayStation Network. The main goal of
 
 ## Release notes
 
-**Initial project**
+**Travis CI config**
 
 #### Additions
 
--   Get NPSSO code from ticket uuid and mobile message code (two factor authentication)
--   Get grant token for OAuth request
--   Get OAuth tokens (access & refresh)
--   Renew access token from refresh token
--   Travis config
+-   Quality code check
+-   Unit tests config
 
 _For the complete history, please refer to [CHANGELOG.md](CHANGELOG.md)._
 

@@ -2,6 +2,17 @@
 
 ## Changelog
 
+![version 0.1.1](https://img.shields.io/badge/version-0.1.1-blue.svg)
+
+**Travis CI config**
+
+#### Additions
+
+-   Quality code check
+-   Unit tests config
+
+<hr />
+
 ![version 0.1.0](https://img.shields.io/badge/version-0.1.0-blue.svg)
 
 **Initial project**

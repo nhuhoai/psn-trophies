@@ -3,6 +3,7 @@ php:
   - '7.2'
 before_script:
   # Download PHPCS
+  - mkdir ./bin
   - wget -O ./bin/phpcs https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
   - chmod +x ./bin/phpcs
 script:
@@ -11,4 +12,4 @@ script:
   # Unit test
   - phpunit
   # Check code quality
-  - phpcs
+  - ./bin/phpcs

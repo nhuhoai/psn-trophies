@@ -2,6 +2,7 @@
 
 ![version 0.1.1](https://img.shields.io/badge/version-0.1.1-blue.svg)
 ![Build status](https://img.shields.io/travis/nhuhoai/psn-trophies.svg)
+![Coverage](https://img.shields.io/coveralls/github/nhuhoai/psn-trophies.svg)
 ![License](https://img.shields.io/github/license/nhuhoai/psn-trophies.svg)
 
 ## Description

@@ -7,10 +7,10 @@
  *
  * @category  API
  * @package   PSNTrophies
- * @author    Nhu-Hoai Robert VO <nhuhoai.vo@franicflow.ch>
+ * @author    Nhu-Hoai Robert VO <nhuhoai.vo@nhuvo.ch>
  * @copyright 2019 Nhu-Hoai Robert VO
- * @license   MIT
- * @version   GIT: 0.1.0
+ * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
+ * @version   GIT: 0.1.1
  * @link      https://www.nhuvo.ch/
  * @since     0.1.0
  */

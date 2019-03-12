@@ -43,11 +43,20 @@ This project uses the [semantic versioning 2.0.0](https://semver.org/).
 
 ### Prerequisites
 
+-   [PHPUnit 7](https://phpunit.de/)
+-   [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
+
 ### Testing
+
+Use ```phpunit``` on the project's root directory.
 
 ### Quality checking
 
+Use ```phpcs``` on the project's root directory.
+
 ### Coverage
+
+Use ```phpunit``` on the project's root directory.
 
 ## Contributing
 

@@ -5,11 +5,14 @@ before_script:
   # Download PHPCS
   - mkdir ./bin
   - wget -O ./bin/phpcs https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
-  - chmod +x ./bin/phpcs
+  - wget -O ./bin/php-coveralls https://github.com/php-coveralls/php-coveralls/releases/download/v2.1.0/php-coveralls.phar
+  - chmod +x ./bin/phpcs ./bin/php-coveralls
 script:
   # Syntax check
   - find src -name "*.php" -print0 | xargs -0 -n1 php -l
   # Unit test
-  - phpunit
+  - phpunit --coverage-clover ./test/clover.xml
   # Check code quality
   - ./bin/phpcs
+after_script:
+  - php ./bin/php-coveralls -v

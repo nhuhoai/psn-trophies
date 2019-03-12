@@ -1,5 +1,14 @@
 language: php
 php:
   - '7.2'
+before_script:
+  # Download PHPCS
+  - wget -O /usr/bin/phpcs https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+  - chmod +x /usr/bin/phpcs
 script:
+  # Syntax check
   - find src -name "*.php" -print0 | xargs -0 -n1 php -l
+  # Unit test
+  - phpunit
+  # Check code quality
+  - phpcs

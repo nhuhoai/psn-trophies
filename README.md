@@ -16,6 +16,7 @@ This is an unofficial API to get data from PlayStation Network. The main goal of
 -   Get grant token for OAuth request
 -   Get OAuth tokens (access & refresh)
 -   Renew access token from refresh token
+-   Travis config
 
 _For the complete history, please refer to [CHANGELOG.md](CHANGELOG.md)._
 

@@ -82,6 +82,8 @@ class PSN
     $url .= "?{$data}";
 
     $opts[CURLOPT_URL] = $url;
+    $opts[CURLOPT_CONNECTTIMEOUT] = 5;
+    $opts[CURLOPT_TIMEOUT] =5;
     $opts[CURLOPT_RETURNTRANSFER] = true;
     $opts[CURLOPT_SSL_VERIFYHOST] = false;
     $opts[CURLOPT_SSL_VERIFYPEER] = false;
@@ -116,6 +118,8 @@ class PSN
     $data = http_build_query($params);
 
     $opts[CURLOPT_URL] = $url;
+    $opts[CURLOPT_CONNECTTIMEOUT] = 5;
+    $opts[CURLOPT_TIMEOUT] =5;
     $opts[CURLOPT_RETURNTRANSFER] = true;
     $opts[CURLOPT_POST] = true;
     $opts[CURLOPT_POSTFIELDS] = $data;

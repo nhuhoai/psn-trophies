@@ -8,6 +8,7 @@
   <testsuites>
     <testsuite name="Default testsuite">
       <file>./test/empty.test.php</file>
+      <file>./test/psn.test.php</file>
     </testsuite>
   </testsuites>
 

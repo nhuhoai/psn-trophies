@@ -281,4 +281,25 @@ class PSN
 
     return $res;
   }
+  /**
+   * All-in-one method from npsso request to oauth
+   *
+   * @param string $ticket_uuid You can found it in the URL after sign into the following URL
+   *                            https://www.bungie.net/en/User/SignIn/Psnid?code=000000
+   * @param string $code        This is the mobile message code
+   *
+   * @return string
+   */
+  public static function getRefreshToken(string $ticket_uuid, string $code) : string
+  {
+    $res = "";
+
+    if (($data = PSN::getNPSSO($ticket_uuid, $code)) != "") {
+      if (($data = PSN::getGrantCode($data)) != "") {
+        $res = PSN::getOAuth($data);
+      }
+    }
+
+    return $res;
+  }
 }

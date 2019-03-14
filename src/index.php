@@ -19,6 +19,7 @@ namespace NhuVo\PSNTrophies;
 
 require_once __DIR__ . "/psn.class.php";
 
+
 // https://auth.api.sonyentertainmentnetwork.com/signin/#/signin2sv/code?response_type=code&client_id=78420c74-1fdf-4575-b43f-eb94c7d770bf&redirect_uri=https%3A%2F%2Fwww.bungie.net%2Fen%2FUser%2FSignIn%2FPsnid&scope=psn:s2s&request_locale=en_US&state=5241062880857907588&ticket_uuid=b820bf6f-3965-4570-9620-d43d3e238767&layout_type=popup&entry=%2Fsignin2sv%2Fcode
 //print PSN::getNPSSO("85639ccd-6118-4a26-97fc-1c974360956b", "563522");
 //https://auth.api.sonyentertainmentnetwork.com/signin/#/signin2sv/code?response_type=code&client_id=78420c74-1fdf-4575-b43f-eb94c7d770bf&redirect_uri=https%3A%2F%2Fwww.bungie.net%2Fen%2FUser%2FSignIn%2FPsnid&scope=psn:s2s&request_locale=en_US&state=5241062880857907588&ticket_uuid=&layout_type=popup&entry=%2Fsignin2sv%2Fcode
@@ -67,5 +68,10 @@ require_once __DIR__ . "/psn.class.php";
 }
 
 */
+
+
+
+//print PSN::getRefreshToken("fa326c29-db1a-4e9b-87f2-6ba4d01e1b3b", "728442");
+// print_r(PSN::renewAccessToken("ca07d05e-1698-4fe7-afb5-92af861f8713"));
 
 // https://auth.api.sonyentertainmentnetwork.com/signin/#/signin2sv/code?response_type=code&client_id=78420c74-1fdf-4575-b43f-eb94c7d770bf&redirect_uri=https%3A%2F%2Fwww.bungie.net%2Fen%2FUser%2FSignIn%2FPsnid&scope=psn:s2s&request_locale=en_US&state=2440630705549072344&ticket_uuid=&layout_type=popup&entry=%2Fsignin2sv%2Fcode

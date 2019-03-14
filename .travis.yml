@@ -8,8 +8,8 @@ before_script:
   # Download PHP coveralls
   - wget -O ./bin/php-coveralls https://github.com/php-coveralls/php-coveralls/releases/download/v2.1.0/php-coveralls.phar
   - chmod +x ./bin/phpcs ./bin/php-coveralls
-  - apt update
-  - apt install apache2 libapache2-mod-php
+  - sudo apt-get update
+  - sudo apt-get install apache2 libapache2-mod-php -y
   - cp ci/*.html /var/www/html
 script:
   # Syntax check

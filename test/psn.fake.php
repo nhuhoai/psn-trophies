@@ -33,6 +33,15 @@ namespace NhuVo\PSNTrophies;
  */
 final class PSNFake extends PSN
 {
+  /// Fake PSN API SSO url
+  protected const URL_SSO = "http://127.0.0.1/sso.php";
+
+  /// Fake PSN API Code url
+  protected const URL_CODE = "http://127.0.0.1/code.php";
+
+  /// Fake PSN API OAuth url
+  protected const URL_OAUTH = "http://127.0.0.1/oauth.php";
+
   /**
    * Retrun the proxy
    *

@@ -342,4 +342,11 @@ class PSN
 
     return $res;
   }
+
+  /**
+   * No constructor, no singleton
+   */
+  private function __construct()
+  {
+  }
 }

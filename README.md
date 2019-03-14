@@ -1,7 +1,8 @@
 # <img src="res/platinum.png" alt="" height="80" /> PSN Trophies (PHP API)
 
 ![version 0.2.1](https://img.shields.io/badge/version-0.2.1-blue.svg)
-![Build status](https://img.shields.io/travis/nhuhoai/psn-trophies.svg)
+[![Build status](https://img.shields.io/travis/nhuhoai/psn-trophies.svg)](https://travis-ci.org/nhuhoai/psn-trophies)
+[![Coveralls github](https://img.shields.io/coveralls/github/nhuhoai/psn-trophies.svg)](https://coveralls.io/github/nhuhoai/psn-trophies)
 ![License](https://img.shields.io/github/license/nhuhoai/psn-trophies.svg)
 
 ## Description

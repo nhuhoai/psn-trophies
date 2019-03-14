@@ -60,6 +60,11 @@ class PSN
   /// Scope from Tustin API
   private const SCOPE = "capone:report_submission,psn:sceapp,user:account.get,user:account.settings.privacy.get,user:account.settings.privacy.update,user:account.realName.get,user:account.realName.update,kamaji:get_account_hash,kamaji:ugc:distributor,oauth:manage_device_usercodes";
 
+  /// Proxy server
+  private static $_proxy = "";
+
+  /// Proxy server port
+  private static $_proxyPort = 0;
 
   /**
    * Send a GET request with curl
@@ -82,6 +87,11 @@ class PSN
     $opts[CURLOPT_SSL_VERIFYPEER] = false;
     $opts[CURLOPT_ENCODING] = "";
     $opts[CURLOPT_HTTPHEADER] = $headers;
+
+    if (PSN::$_proxy != "" && PSN::$_proxyProt > 0) {
+      $opts[CURLOPT_PROXY] = PSN::$_proxy;
+      $opts[CURLOPT_PROXYPORT] = PSN::$_proxyPort;
+    }
 
     $ch = curl_init();
     curl_setopt_array($ch, $opts);
@@ -114,12 +124,42 @@ class PSN
     $opts[CURLOPT_ENCODING] = "";
     $opts[CURLOPT_HTTPHEADER] = $headers;
 
+    if (PSN::$_proxy != "" && PSN::$_proxyProt > 0) {
+      $opts[CURLOPT_PROXY] = PSN::$_proxy;
+      $opts[CURLOPT_PROXYPORT] = PSN::$_proxyPort;
+    }
+
     $ch = curl_init();
     curl_setopt_array($ch, $opts);
     $result = curl_exec($ch);
     curl_close($ch);
 
     return $result;
+  }
+
+  /**
+   * Remove proxy config
+   *
+   * @return void
+   */
+  public static function removeProxy() : void
+  {
+    PSN::$_proxy = "";
+    PSN::$_proxyPort = 0;
+  }
+
+  /**
+   * Set a proxy server config
+   *
+   * @param string $server Proxy server address
+   * @param int    $port   Proxy port server
+   *
+   * @return void
+   */
+  public static function setProxy(string $server, int $port) : void
+  {
+    PSN::$_proxy = $server;
+    PSN::$_proxyPort = $port;
   }
 
   /**

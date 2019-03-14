@@ -2,11 +2,15 @@ language: php
 php:
   - '7.2'
 before_script:
-  # Download PHPCS
   - mkdir ./bin
+  # Download PHPCS
   - wget -O ./bin/phpcs https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+  # Download PHP coveralls
   - wget -O ./bin/php-coveralls https://github.com/php-coveralls/php-coveralls/releases/download/v2.1.0/php-coveralls.phar
   - chmod +x ./bin/phpcs ./bin/php-coveralls
+  - sudo apt-get update
+  - sudo apt-get install apache2 libapache2-mod-php -y
+  - cp ci/*.html /var/www/html
 script:
   # Syntax check
   - find src -name "*.php" -print0 | xargs -0 -n1 php -l

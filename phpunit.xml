@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
 <phpunit
+    bootstrap="./test/bootstrap.php"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/6.3/phpunit.xsd"
     colors="false"
@@ -8,6 +9,7 @@
   <testsuites>
     <testsuite name="Default testsuite">
       <file>./test/empty.test.php</file>
+      <file>./test/psn.test.php</file>
     </testsuite>
   </testsuites>
 

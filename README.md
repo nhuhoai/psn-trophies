@@ -1,22 +1,32 @@
 # <img src="res/platinum.png" alt="" height="80" /> PSN Trophies (PHP API)
 
+<<<<<<< HEAD
 ![version 0.1.1](https://img.shields.io/badge/version-0.1.1-blue.svg)
 ![Build status](https://img.shields.io/travis/nhuhoai/psn-trophies.svg)
 ![Coverage](https://img.shields.io/coveralls/github/nhuhoai/psn-trophies.svg)
+=======
+![version 0.2.1](https://img.shields.io/badge/version-0.2.1-blue.svg)
+[![Build status](https://img.shields.io/travis/nhuhoai/psn-trophies.svg)](https://travis-ci.org/nhuhoai/psn-trophies)
+[![Coveralls github](https://img.shields.io/coveralls/github/nhuhoai/psn-trophies.svg)](https://coveralls.io/github/nhuhoai/psn-trophies)
+>>>>>>> c228111a3fecc9cd7bb795105afcb372cbb25aa2
 ![License](https://img.shields.io/github/license/nhuhoai/psn-trophies.svg)
 
 ## Description
 
 This is an unofficial API to get data from PlayStation Network. The main goal of this project is to make a proof of concept.
 
+This project is based on those two repositories:
+
+- [PHP wrapper for PSN API](https://github.com/Tustin/psn-php) by [@Tustin](https://github.com/Tustin)
+- [PSN API in python](https://github.com/mgp25/psn-api) by [@mgp25](https://github.com/mgp25)
+
 ## Release notes
 
-**Travis CI config**
+**All-in-one login**
 
 #### Additions
 
--   Quality code check
--   Unit tests config
+-   All-in-one method for first authentication (get refresh token)
 
 _For the complete history, please refer to [CHANGELOG.md](CHANGELOG.md)._
 

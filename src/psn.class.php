@@ -10,7 +10,7 @@
  * @author    Nhu-Hoai Robert VO <nhuhoai.vo@nhuvo.ch>
  * @copyright 2019 Nhu-Hoai Robert VO
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
- * @version   GIT: 0.2.0
+ * @version   GIT: 0.2.2
  * @link      https://www.nhuvo.ch/
  * @since     0.2.0
  */
@@ -27,44 +27,44 @@ namespace NhuVo\PSNTrophies;
  * @author    Nhu-Hoai Robert VO <nhuhoai.vo@nhuvo.ch>
  * @copyright 2019 Nhu-Hoai Robert VO
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
- * @release   GIT: 0.2.0
+ * @release   GIT: 0.2.2
  * @link      https://www.nhuvo.ch/
  * @since     0.2.0
  */
 class PSN
 {
   /// Official PSN API SSO url
-  private const URL_SSO = "https://auth.api.sonyentertainmentnetwork.com/2.0/ssocookie";
+  protected const URL_SSO = "https://auth.api.sonyentertainmentnetwork.com/2.0/ssocookie";
 
   /// Official PSN API Code url
-  private const URL_CODE = "https://auth.api.sonyentertainmentnetwork.com/2.0/oauth/authorize";
+  protected const URL_CODE = "https://auth.api.sonyentertainmentnetwork.com/2.0/oauth/authorize";
 
   /// Official PSN API OAuth url
-  private const URL_OAUTH = "https://auth.api.sonyentertainmentnetwork.com/2.0/oauth/token";
+  protected const URL_OAUTH = "https://auth.api.sonyentertainmentnetwork.com/2.0/oauth/token";
 
   /// Client ID from Tustin API
-  private const CLIENT_ID = "b7cbf451-6bb6-4a5a-8913-71e61f462787";
+  protected const CLIENT_ID = "b7cbf451-6bb6-4a5a-8913-71e61f462787";
 
   /// Client secret from Tustin API
-  private const CLIENT_SECRET = "zsISsjmCx85zgCJg";
+  protected const CLIENT_SECRET = "zsISsjmCx85zgCJg";
 
   /// State??? from Tustin API
-  private const STATE = "06d7AuZpOmJAwYYOWmVU63OMY";
+  protected const STATE = "06d7AuZpOmJAwYYOWmVU63OMY";
 
   /// DUID (device uid) from Tustin API
-  private const DUID = "0000000d000400808F4B3AA3301B4945B2E3636E38C0DDFC";
+  protected const DUID = "0000000d000400808F4B3AA3301B4945B2E3636E38C0DDFC";
 
   /// App context
-  private const APP_CONTEXT = "inapp_ios";
+  protected const APP_CONTEXT = "inapp_ios";
 
   /// Scope from Tustin API
-  private const SCOPE = "capone:report_submission,psn:sceapp,user:account.get,user:account.settings.privacy.get,user:account.settings.privacy.update,user:account.realName.get,user:account.realName.update,kamaji:get_account_hash,kamaji:ugc:distributor,oauth:manage_device_usercodes";
+  protected const SCOPE = "capone:report_submission,psn:sceapp,user:account.get,user:account.settings.privacy.get,user:account.settings.privacy.update,user:account.realName.get,user:account.realName.update,kamaji:get_account_hash,kamaji:ugc:distributor,oauth:manage_device_usercodes";
 
   /// Proxy server
-  private static $_proxy = "";
+  protected static $proxy = "";
 
   /// Proxy server port
-  private static $_proxyPort = 0;
+  protected static $proxyPort = 0;
 
   /**
    * Send a GET request with curl
@@ -90,9 +90,9 @@ class PSN
     $opts[CURLOPT_ENCODING] = "";
     $opts[CURLOPT_HTTPHEADER] = $headers;
 
-    if (PSN::$_proxy != "" && PSN::$_proxyProt > 0) {
-      $opts[CURLOPT_PROXY] = PSN::$_proxy;
-      $opts[CURLOPT_PROXYPORT] = PSN::$_proxyPort;
+    if (PSN::$proxy != "" && PSN::$proxyProt > 0) {
+      $opts[CURLOPT_PROXY] = PSN::$proxy;
+      $opts[CURLOPT_PROXYPORT] = PSN::$proxyPort;
     }
 
     $ch = curl_init();
@@ -128,9 +128,9 @@ class PSN
     $opts[CURLOPT_ENCODING] = "";
     $opts[CURLOPT_HTTPHEADER] = $headers;
 
-    if (PSN::$_proxy != "" && PSN::$_proxyProt > 0) {
-      $opts[CURLOPT_PROXY] = PSN::$_proxy;
-      $opts[CURLOPT_PROXYPORT] = PSN::$_proxyPort;
+    if (static::$proxy != "" && static::$proxyPort > 0) {
+      $opts[CURLOPT_PROXY] = static::$proxy;
+      $opts[CURLOPT_PROXYPORT] = static::$proxyPort;
     }
 
     $ch = curl_init();
@@ -148,8 +148,8 @@ class PSN
    */
   public static function removeProxy() : void
   {
-    PSN::$_proxy = "";
-    PSN::$_proxyPort = 0;
+    static::$proxy = "";
+    static::$proxyPort = 0;
   }
 
   /**
@@ -162,8 +162,8 @@ class PSN
    */
   public static function setProxy(string $server, int $port) : void
   {
-    PSN::$_proxy = $server;
-    PSN::$_proxyPort = $port;
+    static::$proxy = $server;
+    static::$proxyPort = $port;
   }
 
   /**
@@ -187,7 +187,7 @@ class PSN
       "authentication_type" => "two_step",
       "ticket_uuid" => $ticket_uuid,
       "code" => $code,
-      "client_id" => PSN::CLIENT_ID
+      "client_id" => static::CLIENT_ID
     ];
 
     $opts = [];
@@ -196,7 +196,7 @@ class PSN
       "Content-Type: application/x-www-form-urlencoded"
     ];
 
-    $result = PSN::post(PSN::URL_SSO, $params, $opts, $headers);
+    $result = static::post(static::URL_SSO, $params, $opts, $headers);
 
     $json = json_decode($result, true);
     if (!is_null($json) && is_array($json) && array_key_exists("npsso", $json)) {
@@ -218,11 +218,11 @@ class PSN
     $res = "";
 
     $params = [
-      "state" => PSN::STATE,
-      "duid" => PSN::DUID,
-      "app_context" => PSN::APP_CONTEXT,
-      "client_id" => PSN::CLIENT_ID,
-      "scope" => PSN::SCOPE,
+      "state" => static::STATE,
+      "duid" => static::DUID,
+      "app_context" => static::APP_CONTEXT,
+      "client_id" => static::CLIENT_ID,
+      "scope" => static::SCOPE,
       "response_type" => "code"
     ];
 
@@ -234,7 +234,7 @@ class PSN
       "Cookie: npsso={$npsso}"
     ];
 
-    $result = PSN::get(PSN::URL_CODE, $params, $opts, $headers);
+    $result = static::get(static::URL_CODE, $params, $opts, $headers);
 
     $result = explode("\n", $result);
     foreach ($result as $row) {
@@ -264,13 +264,13 @@ class PSN
     $res = [];
 
     $params = [
-      "app_context" => PSN::APP_CONTEXT,
-      "client_id" => PSN::CLIENT_ID,
-      "client_secret" => PSN::CLIENT_SECRET,
+      "app_context" => static::APP_CONTEXT,
+      "client_id" => static::CLIENT_ID,
+      "client_secret" => static::CLIENT_SECRET,
       "code" => $grantCode,
-      "duid" => PSN::DUID,
+      "duid" => static::DUID,
       "grant_type" => "authorization_code",
-      "scope" => PSN::SCOPE
+      "scope" => static::SCOPE
     ];
 
     $opts = [];
@@ -279,7 +279,7 @@ class PSN
       "Content-Type: application/x-www-form-urlencoded"
     ];
 
-    $result = PSN::post(PSN::URL_OAUTH, $params, $opts, $headers);
+    $result = static::post(static::URL_OAUTH, $params, $opts, $headers);
 
     $json = json_decode($result, true);
     if (!is_null($json) && is_array($json) && array_key_exists("refresh_token", $json)) {
@@ -301,13 +301,13 @@ class PSN
     $res = [];
 
     $params = [
-      "app_context" => PSN::APP_CONTEXT,
-      "client_id" => PSN::CLIENT_ID,
-      "client_secret" => PSN::CLIENT_SECRET,
+      "app_context" => static::APP_CONTEXT,
+      "client_id" => static::CLIENT_ID,
+      "client_secret" => static::CLIENT_SECRET,
       "refresh_token" => $refreshToken,
-      "duid" => PSN::DUID,
+      "duid" => static::DUID,
       "grant_type" => "refresh_token",
-      "scope" => PSN::SCOPE
+      "scope" => static::SCOPE
     ];
 
     $opts = [];
@@ -316,7 +316,7 @@ class PSN
       "Content-Type: application/x-www-form-urlencoded"
     ];
 
-    $result = PSN::post(PSN::URL_OAUTH, $params, $opts, $headers);
+    $result = static::post(static::URL_OAUTH, $params, $opts, $headers);
 
     $json = json_decode($result, true);
     if (!is_null($json) && is_array($json) && array_key_exists("refresh_token", $json) && array_key_exists("access_token", $json) && array_key_exists("token_type", $json) && $json["token_type"] == "bearer") {
@@ -338,9 +338,9 @@ class PSN
   {
     $res = "";
 
-    if (($data = PSN::getNPSSO($ticket_uuid, $code)) != "") {
-      if (($data = PSN::getGrantCode($data)) != "") {
-        $res = PSN::getOAuth($data);
+    if (($data = static::getNPSSO($ticket_uuid, $code)) != "") {
+      if (($data = static::getGrantCode($data)) != "") {
+        $res = static::getOAuth($data);
       }
     }
 
@@ -350,7 +350,7 @@ class PSN
   /**
    * No constructor, no singleton
    */
-  private function __construct()
+  protected function __construct()
   {
   }
 }

@@ -19,8 +19,6 @@ namespace NhuVo\PSNTrophies;
 
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . "/psn.fake.php";
-
 /**
  * PSN API test
  *

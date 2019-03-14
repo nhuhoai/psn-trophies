@@ -17,8 +17,6 @@
 
 namespace NhuVo\PSNTrophies;
 
-require_once __DIR__ . "/../src/psn.class.php";
-
 /**
  * PlayStation Network API Wrapper Fake for test
  *

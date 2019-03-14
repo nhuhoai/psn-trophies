@@ -2,6 +2,16 @@
 
 ## Changelog
 
+![version 0.2.1](https://img.shields.io/badge/version-0.2.1-blue.svg)
+
+**All-in-one login**
+
+#### Additions
+
+-   All-in-one method for first authentication (get refresh token)
+
+<hr />
+
 ![version 0.2.0](https://img.shields.io/badge/version-0.2.0-blue.svg)
 
 **Making great code**

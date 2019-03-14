@@ -9,7 +9,7 @@
  * @package   PSNTrophies
  * @author    Nhu-Hoai Robert VO <nhuhoai.vo@nhuvo.ch>
  * @copyright 2019 Nhu-Hoai Robert VO
- * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
+ * @license   http://www.opensource.org/licenses/mit-license.html MIT License
  * @version   GIT: 0.2.2
  * @link      https://www.nhuvo.ch/
  * @since     0.2.0
@@ -26,7 +26,7 @@ namespace NhuVo\PSNTrophies;
  * @package   PSNTrophies
  * @author    Nhu-Hoai Robert VO <nhuhoai.vo@nhuvo.ch>
  * @copyright 2019 Nhu-Hoai Robert VO
- * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
+ * @license   http://www.opensource.org/licenses/mit-license.html MIT License
  * @release   GIT: 0.2.2
  * @link      https://www.nhuvo.ch/
  * @since     0.2.0

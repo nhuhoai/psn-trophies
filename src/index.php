@@ -9,8 +9,8 @@
  * @package   PSNTrophies
  * @author    Nhu-Hoai Robert VO <nhuhoai.vo@franicflow.ch>
  * @copyright 2019 Nhu-Hoai Robert VO
- * @license   MIT https://opensource.org/licenses/mit-license.html
- * @version   GIT: 0.1.0
+ * @license   http://www.opensource.org/licenses/mit-license.html MIT License
+ * @version   GIT: 0.2.2
  * @link      https://www.nhuvo.ch/
  * @since     0.1.0
  */
@@ -18,6 +18,26 @@
 namespace NhuVo\PSNTrophies;
 
 require_once __DIR__ . "/psn.class.php";
+
+/*
+$ch = curl_init("https://github.com");
+curl_setopt_array(
+    $ch,
+    [
+      CURLOPT_CONNECTTIMEOUT => 5,
+      CURLOPT_TIMEOUT => 5,
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_SSL_VERIFYHOST => false,
+      CURLOPT_SSL_VERIFYPEER => false,
+      CURLOPT_PROXY => "3.17.154.4",
+      CURLOPT_PROXYPORT => 8080
+    ]
+);
+
+print curl_exec($ch);
+print_r(curl_error($ch));
+curl_close($ch);
+*/
 
 
 // https://auth.api.sonyentertainmentnetwork.com/signin/#/signin2sv/code?response_type=code&client_id=78420c74-1fdf-4575-b43f-eb94c7d770bf&redirect_uri=https%3A%2F%2Fwww.bungie.net%2Fen%2FUser%2FSignIn%2FPsnid&scope=psn:s2s&request_locale=en_US&state=5241062880857907588&ticket_uuid=b820bf6f-3965-4570-9620-d43d3e238767&layout_type=popup&entry=%2Fsignin2sv%2Fcode

@@ -14,7 +14,7 @@
  * @link      https://www.nhuvo.ch/
  * @since     0.2.2
  */
-
+die('ok');
 namespace NhuVo\PSNTrophies;
 
 header("Content-Type: text/plain; charset=utf-8");

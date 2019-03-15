@@ -24,6 +24,7 @@ before_script:
   - sudo service apache2 restart
   - curl http://127.0.0.1/ci/oauth.php
   - curl http://127.0.0.1/ci/oauth.html
+  - curl http://127.0.0.1/ci/phpinfo.php
 script:
   # Syntax check
   - find src -name "*.php" -print0 | xargs -0 -n1 php -l

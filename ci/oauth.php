@@ -14,10 +14,9 @@
  * @link      https://www.nhuvo.ch/
  * @since     0.2.2
  */
-die('ok');
+
 namespace NhuVo\PSNTrophies;
 
-header("Content-Type: text/plain; charset=utf-8");
 print("{");
 print("\"access_token\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",");
 print("\"token_type\":\"bearer\",");
@@ -25,3 +24,5 @@ print("\"refresh_token\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",");
 print("\"expires_in\":9999,");
 print("\"scope\":\"capone:report_submission psn:sceapp user:account.get user:account.realName.get kamaji:ugc:distributor user:account.settings.privacy.update user:account.realName.update kamaji:get_account_hash user:account.settings.privacy.get oauth:manage_device_usercodes\"");
 print("}");
+
+die('OK');

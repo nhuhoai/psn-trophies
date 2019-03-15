@@ -83,6 +83,6 @@ final class PSNTest extends TestCase
    */
   public function testGetNPSSO() : void
   {
-    $this->assert(PSNFake::getNPSSO("", ""), "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+    $this->assertEquals(PSNFake::getNPSSO("", ""), "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
   }
 }

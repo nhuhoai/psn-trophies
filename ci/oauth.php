@@ -17,12 +17,12 @@
 
 namespace NhuVo\PSNTrophies;
 
-print("{");
-print("\"access_token\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",");
-print("\"token_type\":\"bearer\",");
-print("\"refresh_token\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",");
-print("\"expires_in\":9999,");
-print("\"scope\":\"capone:report_submission psn:sceapp user:account.get user:account.realName.get kamaji:ugc:distributor user:account.settings.privacy.update user:account.realName.update kamaji:get_account_hash user:account.settings.privacy.get oauth:manage_device_usercodes\"");
-print("}");
+$token = '{"access_token":"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",';
+$token .= '"token_type":"bearer","refresh_token":"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",';
+$token .= '"expires_in":9999,';
+$token .= '"scope":"capone:report_submission psn:sceapp user:account.get ';
+$token .= 'user:account.realName.get kamaji:ugc:distributor user:account.settings.privacy.update ';
+$token .= 'user:account.realName.update kamaji:get_account_hash user:account.settings.privacy.get ';
+$token .= 'oauth:manage_device_usercodes"}';
 
-die('OK');
+die($token);

@@ -56,7 +56,7 @@ final class PSNTest extends TestCase
    *
    * @return void
    */
-  public function testProxy()
+  public function testProxy() : void
   {
     $this->assertEquals(PSNFake::getProxy(), "");
     $this->assertEquals(PSNFake::getProxyPort(), 0);
@@ -72,5 +72,17 @@ final class PSNTest extends TestCase
 
     $this->assertEquals(PSNFake::getProxy(), "");
     $this->assertEquals(PSNFake::getProxyPort(), 0);
+  }
+
+  /**
+   * Test Test getNPSSO method
+   *
+   * @test testGetNPSSO
+   *
+   * @return void
+   */
+  public function testGetNPSSO() : void
+  {
+    $this->assert(PSNFake::getNPSSO("", ""), "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
   }
 }

@@ -26,6 +26,5 @@ $token .= 'user:account.realName.update kamaji:get_account_hash user:account.set
 $token .= 'oauth:manage_device_usercodes"}';
 
 print $token;
-
 print 0;
 print "oooo";

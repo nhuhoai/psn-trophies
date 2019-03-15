@@ -11,6 +11,7 @@ before_script:
   - sudo apt-get update
   - sudo apt-get install apache2 libapache2-mod-fastcgi -y
   - sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
+  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.2" ]]; then sudo cp ci/www.conf ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.d/; fi
   - sudo a2enmod rewrite actions fastcgi alias
   - echo "cgi.fix_pathinfo = 1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - sudo sed -i -e "s,www-data,travis,g" /etc/apache2/envvars

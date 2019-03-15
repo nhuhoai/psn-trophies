@@ -25,4 +25,7 @@ $token .= 'user:account.realName.get kamaji:ugc:distributor user:account.setting
 $token .= 'user:account.realName.update kamaji:get_account_hash user:account.settings.privacy.get ';
 $token .= 'oauth:manage_device_usercodes"}';
 
-die($token);
+print $token;
+
+print 0;
+print "oooo";

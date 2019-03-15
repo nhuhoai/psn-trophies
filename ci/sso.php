@@ -17,5 +17,4 @@
 
 namespace NhuVo\PSNTrophies;
 
-header("Content-Type: application/json; charset=utf-8");
-print("{\"npsso\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}");
+print '{"npsso":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}';

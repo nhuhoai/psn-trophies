@@ -17,7 +17,7 @@
 
 namespace NhuVo\PSNTrophies;
 
-header("Content-Type: application/json; charset=utf-8");
+header("Content-Type: text/plain; charset=utf-8");
 print("{");
 print("\"access_token\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",");
 print("\"token_type\":\"bearer\",");

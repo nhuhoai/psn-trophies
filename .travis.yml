@@ -22,8 +22,12 @@ before_script:
   - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/000-default.conf
   - sudo cp ci/*.* /var/www/html
   - sudo service apache2 restart
+  - curl http://127.0.0.1/
   - curl http://127.0.0.1/oauth.php
   - curl http://127.0.0.1/oauth.html
+  - curl http://127.0.0.1/ci/oauth.php
+  - curl http://127.0.0.1/ci/oauth.html
+  - curl http://127.0.0.1/ci/
 script:
   # Syntax check
   - find src -name "*.php" -print0 | xargs -0 -n1 php -l
